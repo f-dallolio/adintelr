@@ -5,7 +5,7 @@
 #' @param libname Library
 #' @param pkgname Package name
 #'
-#' @exportPattern ^adintel_*
+#' @export
 .onLoad <- function(libname, pkgname) {
   # Use the internal function to create a db connection (see connections.R)
   con <- adintel_create_connection()
