@@ -1,7 +1,7 @@
-adintel_create_connention <- function() {
+adintel_create_connection <- function() {
   DBI::dbConnect(
     RPostgres::Postgres(),
-    dbname = "adintel",
+    dbname = "adintel_2014",
     host = "10.147.18.200",
     port = 5432,
     user = "postgres",

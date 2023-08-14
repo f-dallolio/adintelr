@@ -2,14 +2,17 @@
 % Please edit documentation in R/zzz.R
 \name{.onLoad}
 \alias{.onLoad}
-\title{Connect to the Lahman database and create
-accessor funtions when the package is loaded.}
+\title{Connect to 'adintel' database when the package is loaded}
 \usage{
 .onLoad(libname, pkgname)
 }
+\arguments{
+\item{libname}{Library}
+
+\item{pkgname}{Package name
+
+exportPattern tbl|query|execute|src|^lahman_*}
+}
 \description{
-Note how the exportPattern below matches the con_id
-("lahman") in the call to dbc_init. This will ensure
-all of your table accessor functions are exported to
-the package namespace.
+Connect to 'adintel' database when the package is loaded
 }
