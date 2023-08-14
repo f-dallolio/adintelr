@@ -1,4 +1,4 @@
-adintel_create_connention <- function(variables) {
+adintel_create_connention <- function() {
   DBI::dbConnect(
     RPostgres::Postgres(),
     dbname = "adintel",
