@@ -5,14 +5,14 @@
 #' @param libname Library
 #' @param pkgname Package name
 #'
-#' @exportPattern ^adintel_
+#' @export
 .onLoad <- function(libname, pkgname) {
   # Use the internal function to create a db connection (see connections.R)
   con <- adintel_create_connection()
 
   # Add tbl, query, execute, etc functions to the package
   package_env <- parent.env(environment())
-  dbcooper::dbc_init(con, "adintel", env = package_env, table_formatter = table_formatter)
+  dbcooper::dbc_init(con, "adintel", env = package_env, table_formatter = (\(x) str_remove_all(x, "public.")))
 }
 
 .onUnload <- function(libpath){
